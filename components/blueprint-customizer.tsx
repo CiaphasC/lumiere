@@ -106,7 +106,7 @@ export function BlueprintCustomizer() {
               >
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/20 to-transparent" />
                 <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-                  <h3 className="mb-2 text-3xl font-bold text-white">Luna Andina</h3>
+                  <h3 className="mb-2 text-3xl font-bold text-white">LUMIÈRE</h3>
                   <p className="text-sm text-white/80">{fragrances.find((f) => f.id === selectedFragrance)?.name}</p>
                   <div className="mt-8 space-y-2">
                     {ingredients.slice(0, 3).map((ing) => (
