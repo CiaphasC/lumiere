@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
@@ -73,10 +74,12 @@ export function ProductsView({ onPurchase }: ProductsViewProps) {
 
                 {/* Product Image */}
                 <div className="relative h-64 overflow-hidden bg-gradient-to-br from-fuchsia-500/20 via-purple-500/20 to-orange-400/20">
-                  <img
+                  <Image
                     src={product.image || "/placeholder.svg"}
                     alt={product.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60" />
                 </div>
