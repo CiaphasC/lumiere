@@ -12,6 +12,7 @@ export function MagicWand({ activeCard }: MagicWandProps) {
   const { x, y } = useCursorPosition()
   const prefersReducedMotion = useReducedMotion()
 
+  // Solo activamos el halo mágico cuando hay una tarjeta destacada y el usuario no solicita menos animación
   if (activeCard === null || prefersReducedMotion) return null
 
   return (
@@ -28,7 +29,8 @@ export function MagicWand({ activeCard }: MagicWandProps) {
       }}
     >
       <div className="relative h-6 w-6">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 opacity-80 blur-md" />
+        {/* Emisor principal con gradiente difuminado que simula polvo de luz */}
+        <div className="absolute inset-0 rounded-full bg-brand-gradient opacity-80 blur-md" />
         <div className="absolute inset-0 rounded-full bg-white" />
         <motion.div
           className="absolute -inset-4 rounded-full border-2 border-fuchsia-500"

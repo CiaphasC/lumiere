@@ -25,22 +25,22 @@ export function Header({ onNavigate, currentSection, onShopClick }: HeaderProps)
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo - Updated brand name to LUMIÈRE */}
+        {/* Logotipo con gradiente para reforzar la recordación de marca */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="flex cursor-pointer items-center gap-2"
           onClick={() => onNavigate("inicio")}
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 via-purple-500 to-orange-400">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-gradient-br">
             <span className="text-lg font-bold text-white">L</span>
           </div>
-          <span className="bg-gradient-to-r from-fuchsia-400 to-orange-400 bg-clip-text text-xl font-bold text-transparent">
+          <span className="text-brand-gradient-soft text-xl font-bold">
             LUMIÈRE
           </span>
         </motion.div>
 
-        {/* Desktop Navigation */}
+        {/* Navegación principal en escritorio con indicador dinámico */}
         <div className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <button
@@ -54,32 +54,28 @@ export function Header({ onNavigate, currentSection, onShopClick }: HeaderProps)
               {currentSection === item.id && (
                 <motion.div
                   layoutId="activeSection"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-fuchsia-500 to-orange-400"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-gradient"
                 />
               )}
             </button>
           ))}
         </div>
 
-        {/* CTA Button - Added onClick handler for shop button */}
+        {/* CTA de compra con gradiente para acentuar la acción comercial */}
         <div className="hidden items-center gap-4 md:flex">
-          <Button
-            size="sm"
-            onClick={onShopClick}
-            className="bg-gradient-to-r from-fuchsia-500 to-orange-400 text-white shadow-lg shadow-fuchsia-500/30 transition-all hover:scale-105 hover:shadow-fuchsia-500/50"
-          >
+          <Button size="sm" onClick={onShopClick} variant="brand">
             <ShoppingBag className="mr-2 h-4 w-4" />
             Comprar
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Activador del menú móvil que mantiene la navegación accesible */}
         <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Menú desplegable en móvil con acceso a secciones y CTA */}
       {mobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -107,7 +103,8 @@ export function Header({ onNavigate, currentSection, onShopClick }: HeaderProps)
                 onShopClick()
                 setMobileMenuOpen(false)
               }}
-              className="mt-2 bg-gradient-to-r from-fuchsia-500 to-orange-400 text-white"
+              variant="brand"
+              className="mt-2"
             >
               <ShoppingBag className="mr-2 h-4 w-4" />
               Comprar

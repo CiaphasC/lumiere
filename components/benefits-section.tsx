@@ -23,7 +23,8 @@ export function BenefitsSection() {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-4 bg-gradient-to-r from-fuchsia-400 via-purple-400 to-orange-400 bg-clip-text text-5xl font-bold text-transparent">
+          {/* Encabezado con gradiente suave que comunica resultados premium */}
+          <h2 className="mb-4 text-brand-gradient-soft text-5xl font-bold">
             Resultados Profesionales
           </h2>
           <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-gray-300">
@@ -52,7 +53,7 @@ export function BenefitsSection() {
         </div>
       </div>
 
-      {/* Decorative gradient orbs */}
+      {/* Esferas decorativas en gradiente que envuelven la sección con luz ambiental */}
       <div className="pointer-events-none absolute -left-1/4 top-1/4 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
     </section>

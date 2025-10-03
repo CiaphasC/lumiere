@@ -42,7 +42,8 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 bg-clip-text text-5xl font-bold text-transparent">
+          {/* Encabezado con gradiente que celebra a la comunidad de usuarias */}
+          <h2 className="mb-4 text-brand-gradient text-5xl font-bold">
             Nuestra comunidad radiante
           </h2>
           <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-gray-400">
@@ -60,6 +61,7 @@ export function TestimonialsSection() {
               transition={{ delay: index * 0.1 }}
             >
               <Card className="border-zinc-800 bg-zinc-900/50 p-6 backdrop-blur-sm transition-all hover:border-fuchsia-500/50 hover:bg-zinc-900/70">
+                {/* Tarjeta con retrato y procedencia para humanizar el testimonio */}
                 <div className="mb-4 flex items-center gap-4">
                   <div className="relative h-16 w-16 overflow-hidden rounded-full">
                     <Image
@@ -75,6 +77,7 @@ export function TestimonialsSection() {
                   </div>
                 </div>
 
+                {/* Calificación destacada con estrellas en tono fucsia */}
                 <div className="mb-3 flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-fuchsia-500 text-fuchsia-500" />

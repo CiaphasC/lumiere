@@ -29,7 +29,8 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <h1 className="bg-gradient-to-r from-fuchsia-400 via-purple-400 to-orange-400 bg-clip-text text-6xl font-bold leading-tight text-transparent md:text-8xl">
+          {/* Titular principal con gradiente suave para expresar la identidad luminosa de la marca */}
+          <h1 className="text-brand-gradient-soft text-6xl font-bold leading-tight md:text-8xl">
             LUMIÈRE
           </h1>
 
@@ -38,11 +39,8 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
           </p>
 
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
-            <Button
-              onClick={onCTAClick}
-              size="lg"
-              className="bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 px-8 text-lg text-white shadow-lg shadow-fuchsia-500/50 transition-all hover:scale-105 hover:shadow-xl hover:shadow-fuchsia-500/60"
-            >
+            {/* CTA primaria potenciando el gradiente corporativo para destacar la acción principal */}
+            <Button onClick={onCTAClick} size="lg" variant="brand" className="px-8 text-lg">
               Descubre tu fórmula
             </Button>
 
@@ -86,7 +84,8 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
               whileHover={{ scale: 1.05, y: -5 }}
               className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900/50 to-zinc-900/30 p-6 backdrop-blur-sm transition-all hover:border-fuchsia-500/50"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/5 to-orange-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
+              {/* Capa de resplandor que activa el highlight en hover para aportar dinamismo visual */}
+              <div className="absolute inset-0 bg-brand-highlight opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="relative">
                 <h3 className="mb-2 text-lg font-semibold text-white">{item.title}</h3>
                 <p className="text-sm text-gray-400">{item.desc}</p>

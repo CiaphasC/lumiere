@@ -46,7 +46,8 @@ export function BeautyLab() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 bg-clip-text text-5xl font-bold text-transparent">
+          {/* Título con gradiente que posiciona el laboratorio como experiencia insignia */}
+          <h2 className="mb-4 text-brand-gradient text-5xl font-bold">
             Laboratorio de belleza
           </h2>
           <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-gray-400">
@@ -55,7 +56,7 @@ export function BeautyLab() {
         </motion.div>
 
         <div className="grid gap-8 lg:grid-cols-3">
-          {/* Control panel */}
+          {/* Panel de control para ajustar parámetros lumínicos del experimento */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -132,7 +133,7 @@ export function BeautyLab() {
             </Card>
           </motion.div>
 
-          {/* Visualization area */}
+          {/* Área de visualización donde se proyecta la respuesta estética del spotlight */}
           <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -153,7 +154,8 @@ export function BeautyLab() {
                   }}
                   className="mb-8"
                 >
-                  <div className="mx-auto h-48 w-48 rounded-full bg-gradient-to-br from-fuchsia-500 via-purple-500 to-orange-400 shadow-2xl shadow-fuchsia-500/50" />
+                  {/* Círculo con gradiente diagonal que simula la mezcla cromática personalizada */}
+                  <div className="mx-auto h-48 w-48 rounded-full bg-brand-gradient-br shadow-2xl shadow-fuchsia-500/50" />
                 </motion.div>
                 <h3 className="mb-4 text-3xl font-bold text-white">Mueve tu cursor</h3>
                 <p className="text-gray-400">Observa cómo la luz sigue tu movimiento y realza los colores</p>

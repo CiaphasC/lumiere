@@ -136,11 +136,12 @@ export function CosmicIntro({ onExplore }: CosmicIntroProps) {
 
           {/* Center logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            {/* Núcleo con gradiente diagonal para simbolizar la energía cosmética de la marca */}
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 via-purple-500 to-orange-400 shadow-2xl shadow-fuchsia-500/50"
+              className="flex h-32 w-32 items-center justify-center rounded-full bg-brand-gradient-br shadow-2xl shadow-fuchsia-500/50"
             >
               <span className="text-3xl font-bold text-white">L</span>
             </motion.div>
@@ -157,11 +158,8 @@ export function CosmicIntro({ onExplore }: CosmicIntroProps) {
           <h2 className="mb-4 text-2xl font-light tracking-wide text-gray-300">
             Descubre la ciencia de la belleza natural
           </h2>
-          <Button
-            onClick={handleExplore}
-            size="lg"
-            className="bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 text-white shadow-lg shadow-fuchsia-500/50 transition-all hover:scale-105 hover:shadow-xl hover:shadow-fuchsia-500/60"
-          >
+          {/* CTA de exploración con gradiente para guiar al usuario hacia la experiencia principal */}
+          <Button onClick={handleExplore} size="lg" variant="brand">
             Explorar colección
           </Button>
         </motion.div>
