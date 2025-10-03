@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -31,10 +32,13 @@ export function BlogView() {
           <Card className="group overflow-hidden border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-fuchsia-500/50">
             <div className="grid gap-6 lg:grid-cols-2">
               <div className="relative h-96 overflow-hidden lg:h-auto">
-                <img
+                <Image
                   src={articles[0].image || "/placeholder.svg"}
                   alt={articles[0].title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-zinc-900/50 to-transparent lg:opacity-60" />
               </div>
@@ -75,10 +79,12 @@ export function BlogView() {
               <Card className="group h-full overflow-hidden border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-fuchsia-500/50 hover:shadow-xl hover:shadow-fuchsia-500/20">
                 {/* Article Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60" />
                   <Badge className="absolute right-4 top-4 bg-zinc-900/80 text-white backdrop-blur-sm">
