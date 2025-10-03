@@ -30,7 +30,7 @@ export function BlueprintCustomizer() {
 
   return (
     <section className="relative overflow-hidden bg-zinc-950 py-24">
-      {/* Blueprint grid background */}
+      {/* Retícula técnica que contextualiza la personalización como un proceso científico */}
       <div
         className="absolute inset-0 opacity-10"
         style={{
@@ -49,7 +49,8 @@ export function BlueprintCustomizer() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 bg-clip-text text-5xl font-bold text-transparent">
+          {/* Título inmersivo con gradiente que invita a configurar la fórmula propia */}
+          <h2 className="mb-4 text-brand-gradient text-5xl font-bold">
             Personaliza tu experiencia
           </h2>
           <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-gray-400">
@@ -58,7 +59,7 @@ export function BlueprintCustomizer() {
         </motion.div>
 
         <div className="relative grid gap-8 lg:grid-cols-2">
-          {/* Central bottle */}
+          {/* Botella central que responde visualmente a las selecciones del usuario */}
           <div className="flex items-center justify-center">
             <motion.div
               className="relative"
@@ -67,9 +68,9 @@ export function BlueprintCustomizer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              {/* SVG connections to modules */}
-              <svg className="absolute inset-0 h-full w-full" style={{ overflow: "visible" }}>
-                {/* Lines connecting to modules */}
+              {/* Conexiones visuales que enlazan la botella con los módulos de configuración */}
+                <svg className="absolute inset-0 h-full w-full" style={{ overflow: "visible" }}>
+                {/* Líneas dinámicas que varían según el módulo activo */}
                 <motion.line
                   x1="50%"
                   y1="50%"
@@ -92,7 +93,7 @@ export function BlueprintCustomizer() {
                 />
               </svg>
 
-              {/* Bottle */}
+              {/* Recipiente principal con gradiente especular y halo cromático */}
               <motion.div
                 className="relative h-96 w-64 rounded-3xl shadow-2xl"
                 style={{
@@ -118,7 +119,7 @@ export function BlueprintCustomizer() {
                 </div>
               </motion.div>
 
-              {/* Orbiting ingredient indicators */}
+              {/* Indicadores orbitales que muestran los ingredientes estrella de la fórmula */}
               {ingredients.slice(0, 5).map((ingredient, index) => {
                 const angle = (index / 5) * 360
                 const radius = 180
@@ -146,9 +147,9 @@ export function BlueprintCustomizer() {
             </motion.div>
           </div>
 
-          {/* Customization modules */}
+          {/* Módulos de configuración con feedback visual inmediato */}
           <div className="space-y-6">
-            {/* Color selector */}
+            {/* Selector de color que define la presencia visual del envase */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -179,7 +180,7 @@ export function BlueprintCustomizer() {
               </Card>
             </motion.div>
 
-            {/* Fragrance selector */}
+            {/* Selector de fragancia que combina perfil aromático y beneficios sensoriales */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -205,7 +206,7 @@ export function BlueprintCustomizer() {
               </Card>
             </motion.div>
 
-            {/* Skin type selector */}
+            {/* Selector de tipo de piel que personaliza la recomendación dermatológica */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -230,7 +231,7 @@ export function BlueprintCustomizer() {
           </div>
         </div>
 
-        {/* Feature bar at bottom */}
+        {/* Barra de atributos clave que resume beneficios diferenciales */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

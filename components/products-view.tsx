@@ -22,9 +22,10 @@ export function ProductsView({ onPurchase }: ProductsViewProps) {
   return (
     <section className="relative min-h-screen bg-zinc-950 py-24">
       <div className="relative mx-auto max-w-7xl px-6">
-        {/* Header */}
+        {/* Cabecera comercial que introduce el catálogo de manera aspiracional */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 text-center">
-          <h1 className="mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 bg-clip-text text-5xl font-bold text-transparent">
+          {/* Título con gradiente que posiciona la colección como insignia de la marca */}
+          <h1 className="mb-4 text-brand-gradient text-5xl font-bold">
             Nuestros Productos
           </h1>
           <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-gray-400">
@@ -32,7 +33,7 @@ export function ProductsView({ onPurchase }: ProductsViewProps) {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
+        {/* Filtro de categorías con botones que alternan entre gradiente y contorno */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,11 +43,11 @@ export function ProductsView({ onPurchase }: ProductsViewProps) {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
+              variant={selectedCategory === category ? "brand" : "outline"}
               onClick={() => setSelectedCategory(category)}
               className={
                 selectedCategory === category
-                  ? "bg-gradient-to-r from-fuchsia-500 to-orange-400 text-white"
+                  ? undefined
                   : "border-zinc-700 text-gray-300 hover:border-fuchsia-500/50 hover:text-white"
               }
             >
@@ -55,7 +56,7 @@ export function ProductsView({ onPurchase }: ProductsViewProps) {
           ))}
         </motion.div>
 
-        {/* Products Grid */}
+        {/* Catálogo de productos con tarjetas interactivas y badges contextuales */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((product, index) => (
             <motion.div
@@ -66,14 +67,14 @@ export function ProductsView({ onPurchase }: ProductsViewProps) {
             >
               <Card className="group relative overflow-hidden border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-fuchsia-500/50 hover:shadow-xl hover:shadow-fuchsia-500/20">
                 {product.featured && (
-                  <Badge className="absolute right-4 top-4 z-10 bg-gradient-to-r from-fuchsia-500 to-orange-400 text-white">
+                  <Badge variant="brand" className="absolute right-4 top-4 z-10">
                     <Sparkles className="mr-1 h-3 w-3" />
                     Destacado
                   </Badge>
                 )}
 
-                {/* Product Image */}
-                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-fuchsia-500/20 via-purple-500/20 to-orange-400/20">
+                {/* Imagen del producto con capa de brillo que aporta profundidad */}
+                <div className="relative h-64 overflow-hidden bg-brand-sheen">
                   <Image
                     src={product.image || "/placeholder.svg"}
                     alt={product.name}
@@ -84,12 +85,12 @@ export function ProductsView({ onPurchase }: ProductsViewProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60" />
                 </div>
 
-                {/* Product Info */}
+                {/* Información clave y beneficios destacados del producto */}
                 <div className="p-6">
                   <h3 className="mb-2 text-xl font-bold text-white">{product.name}</h3>
                   <p className="mb-4 text-sm leading-relaxed text-gray-400">{product.description}</p>
 
-                  {/* Benefits */}
+                  {/* Beneficios resumidos en insignias para lectura rápida */}
                   <div className="mb-4 flex flex-wrap gap-2">
                     {product.benefits.slice(0, 2).map((benefit) => (
                       <Badge key={benefit} variant="secondary" className="bg-zinc-800 text-gray-300">
@@ -98,15 +99,12 @@ export function ProductsView({ onPurchase }: ProductsViewProps) {
                     ))}
                   </div>
 
-                  {/* Price and CTA */}
+                  {/* Bloque de precio acompañado de la llamada de compra */}
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="text-2xl font-bold text-white">S/ {product.price.toFixed(2)}</span>
                     </div>
-                    <Button
-                      onClick={() => onPurchase(product)}
-                      className="bg-gradient-to-r from-fuchsia-500 to-orange-400 text-white shadow-lg transition-all hover:scale-105 hover:shadow-fuchsia-500/50"
-                    >
+                    <Button onClick={() => onPurchase(product)} variant="brand">
                       <ShoppingBag className="mr-2 h-4 w-4" />
                       Comprar
                     </Button>

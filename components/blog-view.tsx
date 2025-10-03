@@ -12,9 +12,10 @@ export function BlogView() {
   return (
     <section className="relative min-h-screen bg-zinc-950 py-24">
       <div className="relative mx-auto max-w-7xl px-6">
-        {/* Header */}
+        {/* Cabecera informativa con gradiente que introduce la narrativa editorial */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 text-center">
-          <h1 className="mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 bg-clip-text text-5xl font-bold text-transparent">
+          {/* Título principal enfatizando la autoridad del blog mediante gradiente corporativo */}
+          <h1 className="mb-4 text-brand-gradient text-5xl font-bold">
             Blog de Belleza
           </h1>
           <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-gray-400">
@@ -22,7 +23,7 @@ export function BlogView() {
           </p>
         </motion.div>
 
-        {/* Featured Article */}
+        {/* Artículo destacado con badge corporativo y CTA de lectura */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,7 +44,7 @@ export function BlogView() {
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-zinc-900/50 to-transparent lg:opacity-60" />
               </div>
               <div className="flex flex-col justify-center p-8">
-                <Badge className="mb-4 w-fit bg-gradient-to-r from-fuchsia-500 to-orange-400 text-white">
+                <Badge variant="brand" className="mb-4 w-fit">
                   Artículo Destacado
                 </Badge>
                 <h2 className="mb-4 text-3xl font-bold leading-tight text-white">{articles[0].title}</h2>
@@ -58,7 +59,7 @@ export function BlogView() {
                     {articles[0].readTime}
                   </span>
                 </div>
-                <Button className="w-fit bg-gradient-to-r from-fuchsia-500 to-orange-400 text-white">
+                <Button variant="brand" className="w-fit">
                   Leer más
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -67,7 +68,7 @@ export function BlogView() {
           </Card>
         </motion.div>
 
-        {/* Articles Grid */}
+        {/* Listado complementario de artículos con énfasis en exploración continua */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {articles.slice(1).map((article, index) => (
             <motion.div
@@ -77,7 +78,7 @@ export function BlogView() {
               transition={{ delay: (index + 1) * 0.1 }}
             >
               <Card className="group h-full overflow-hidden border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-fuchsia-500/50 hover:shadow-xl hover:shadow-fuchsia-500/20">
-                {/* Article Image */}
+                {/* Imagen de portada con overlay para preservar la legibilidad del texto */}
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={article.image || "/placeholder.svg"}
@@ -92,7 +93,7 @@ export function BlogView() {
                   </Badge>
                 </div>
 
-                {/* Article Content */}
+                {/* Contenido del artículo y llamada secundaria a la acción */}
                 <div className="p-6">
                   <h3 className="mb-3 text-xl font-bold leading-tight text-white">{article.title}</h3>
                   <p className="mb-4 text-sm leading-relaxed text-gray-400">{article.excerpt}</p>

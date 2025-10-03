@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Variante personalizada para aplicar estilos en todo el árbol cuando el modo oscuro está activo */
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -113,6 +114,46 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Utilidad para tipografía con gradiente principal de la marca */
+@utility text-brand-gradient {
+  @apply bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 bg-clip-text text-transparent;
+}
+
+/* Variante suavizada del gradiente tipográfico para jerarquías secundarias */
+@utility text-brand-gradient-soft {
+  @apply bg-gradient-to-r from-fuchsia-400 via-purple-400 to-orange-400 bg-clip-text text-transparent;
+}
+
+/* Fondo con gradiente principal para botones y contenedores destacados */
+@utility bg-brand-gradient {
+  @apply bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400;
+}
+
+/* Fondo en gradiente diagonal que refuerza la identidad visual */
+@utility bg-brand-gradient-br {
+  @apply bg-gradient-to-br from-fuchsia-500 via-purple-500 to-orange-400;
+}
+
+/* Resplandor sutil utilizado en tarjetas interactivas y paneles */
+@utility bg-brand-highlight {
+  @apply bg-gradient-to-br from-fuchsia-500/5 to-orange-500/5;
+}
+
+/* Brillo difuso para realzar superficies con sensación etérea */
+@utility bg-brand-sheen {
+  @apply bg-gradient-to-br from-fuchsia-500/20 via-purple-500/20 to-orange-400/20;
+}
+
+/* Sombra suave que simula un halo lumínico */
+@utility shadow-brand-glow {
+  @apply shadow-lg shadow-fuchsia-500/50;
+}
+
+/* Sombra intensa para estados de enfoque o interacción */
+@utility shadow-brand-strong {
+  @apply shadow-xl shadow-fuchsia-500/60;
 }
 
 @layer base {

@@ -25,7 +25,8 @@ export function ArticlesSection() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 bg-clip-text text-5xl font-bold text-transparent">
+          {/* Encabezado de sección con gradiente para transmitir autoridad editorial */}
+          <h2 className="mb-4 text-brand-gradient text-5xl font-bold">
             Grimorio de belleza
           </h2>
           <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-gray-400">
@@ -33,7 +34,7 @@ export function ArticlesSection() {
           </p>
         </motion.div>
 
-        {/* Category tabs */}
+        {/* Selector de categorías que filtra el contenido editorial */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +52,7 @@ export function ArticlesSection() {
           </Tabs>
         </motion.div>
 
-        {/* Articles grid */}
+        {/* Cuadrícula de artículos con efecto de realce al interactuar */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredArticles.map((article, index) => (
             <motion.div

@@ -20,6 +20,9 @@ const buttonVariants = cva(
         ghost:
           'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
+        // Variante insignia con gradiente y sombreado que refuerzan la identidad de Lumière
+        brand:
+          'bg-brand-gradient text-white shadow-brand-glow transition-transform hover:scale-105 hover:shadow-brand-strong',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',

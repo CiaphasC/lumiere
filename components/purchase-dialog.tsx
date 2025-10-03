@@ -26,6 +26,7 @@ export function PurchaseDialog({ open, onOpenChange, product }: PurchaseDialogPr
     quantity: "1",
   })
 
+  // No renderizamos el diálogo hasta contar con un producto seleccionado
   if (!product) return null
 
   const totalPrice = product.price * Number.parseInt(formData.quantity)
@@ -123,6 +124,7 @@ export function PurchaseDialog({ open, onOpenChange, product }: PurchaseDialogPr
                 </Select>
               </div>
 
+              {/* Resumen de costos con contraste cromático para la cifra final */}
               <div className="rounded-lg border border-zinc-800 bg-zinc-800/50 p-4">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-400">Subtotal:</span>
@@ -134,11 +136,8 @@ export function PurchaseDialog({ open, onOpenChange, product }: PurchaseDialogPr
                 </div>
               </div>
 
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 text-white shadow-lg hover:shadow-xl"
-              >
+              {/* CTA de confirmación con gradiente para cerrar la experiencia de compra */}
+              <Button type="submit" disabled={isSubmitting} variant="brand" className="w-full">
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

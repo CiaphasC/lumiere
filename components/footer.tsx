@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-16">
-      {/* Shimmer effect */}
+      {/* Efecto de brillo que recorre el borde superior y aporta sofisticación */}
       <motion.div
         className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent"
         animate={{
@@ -23,9 +23,10 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
+          {/* Bloque de marca con gradiente que refuerza el posicionamiento premium */}
           <div>
-            <h3 className="mb-4 text-2xl font-bold bg-gradient-to-r from-fuchsia-500 via-purple-500 to-orange-400 bg-clip-text text-transparent">
+            {/* Logotipo textual con gradiente para cerrar la experiencia con coherencia visual */}
+            <h3 className="mb-4 text-2xl font-bold text-brand-gradient">
               LUMIÈRE
             </h3>
             <p className="mb-4 leading-relaxed text-gray-400">
@@ -44,7 +45,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick links */}
+          {/* Navegación complementaria para profundizar en secciones clave */}
           <div>
             <h4 className="mb-4 font-semibold text-white">Enlaces rápidos</h4>
             <ul className="space-y-2">
@@ -58,7 +59,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Enlaces legales que garantizan transparencia y confianza */}
           <div>
             <h4 className="mb-4 font-semibold text-white">Legal</h4>
             <ul className="space-y-2">
@@ -74,7 +75,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Captación para newsletter con CTA en gradiente que incentiva la suscripción */}
           <div>
             <h4 className="mb-4 font-semibold text-white">Newsletter</h4>
             <p className="mb-4 text-sm text-gray-400">Recibe tips de belleza y ofertas exclusivas</p>
@@ -84,7 +85,7 @@ export function Footer() {
                 placeholder="tu@email.com"
                 className="border-zinc-700 bg-zinc-800 text-white placeholder:text-gray-500"
               />
-              <Button size="icon" className="bg-fuchsia-500 hover:bg-fuchsia-600">
+              <Button size="icon" variant="brand">
                 <Mail className="h-4 w-4" />
               </Button>
             </div>
