@@ -12,7 +12,7 @@ const testimonials = [
     city: "Lima",
     image: "/testimonial-sofia.jpg",
     rating: 5,
-    text: "Luna Andina transformó mi piel. La luminosidad que prometen es real, y me encanta saber que uso ingredientes naturales de mi tierra.",
+    text: "Lumiere transformó mi piel. La luminosidad que prometen es real, y me encanta saber que uso ingredientes naturales de mi tierra.",
   },
   {
     id: "2",
@@ -20,7 +20,7 @@ const testimonials = [
     city: "Arequipa",
     image: "/testimonial-valentina.jpg",
     rating: 5,
-    text: "Como alguien con piel sensible, encontrar productos que funcionen es difícil. Luna Andina es suave pero efectiva. ¡La recomiendo totalmente!",
+    text: "Como alguien con piel sensible, encontrar productos que funcionen es difícil. Lumiere es suave pero efectiva. ¡La recomiendo totalmente!",
   },
   {
     id: "3",
